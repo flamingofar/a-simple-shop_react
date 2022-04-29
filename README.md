@@ -2,4 +2,4 @@
 
 ## Link
 
-https://github.com/malt0533/a-simple-shop_react
+https://a-simple-shop.netlify.app/
