@@ -1,0 +1,11 @@
+.form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: stretch;
+	gap: 0.6rem;
+
+	input {
+		width: 100%;
+	}
+}

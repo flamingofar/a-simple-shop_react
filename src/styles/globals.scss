@@ -33,3 +33,37 @@ ul {
 li {
 	list-style: none;
 }
+
+img {
+	display: inline-block;
+	width: 100%;
+	height: auto;
+}
+
+/* Defines a grid width three variable columns for main */
+main {
+	display: grid;
+	grid-template-columns:
+		minmax(1rem, 1fr)
+		minmax(auto, 900px)
+		minmax(auto, 300px)
+		minmax(1rem, 1fr);
+	gap: 1rem 0;
+}
+/* Every direct child of main gets positioned in the middle column */
+main > * {
+	// grid-column: 2;
+	padding: 2rem;
+}
+
+/* Every element with the class .full inherits the grid, 
+  and fills up the three columns */
+.full {
+	display: inherit;
+	grid: inherit;
+	grid-column: 1 / -1;
+}
+/* Every child of .full fills up the middle column */
+.full > * {
+	grid-column: 2;
+}

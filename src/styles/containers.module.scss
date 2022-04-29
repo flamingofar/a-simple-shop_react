@@ -1,7 +1,21 @@
 .basket {
+	position: sticky;
+	top: 10%;
+	height: 50vh;
+
+	grid: inherit;
+	grid-column: 3;
+
+	& > {
+		grid-column: 2;
+	}
 }
 
+.produktListmain {
+	grid-column: 2;
+}
 .productList {
 	display: grid;
 	grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+	gap: 2rem;
 }

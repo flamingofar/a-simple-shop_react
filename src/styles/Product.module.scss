@@ -1,0 +1,27 @@
+.li {
+	border: solid rgb(226, 226, 226) 2px;
+	padding: 1rem;
+
+	.img_container {
+		width: 20rem;
+		margin-inline: auto;
+	}
+
+	.info_basket {
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+
+		div > button:not(:last-child) {
+			margin-inline-end: 0.5rem;
+		}
+
+		p {
+			margin: 0;
+			font-weight: bold;
+		}
+	}
+	.hidden {
+		display: none;
+	}
+}
