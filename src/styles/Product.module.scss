@@ -1,7 +1,7 @@
 .li {
-	border: solid rgb(226, 226, 226) 2px;
-	padding: 1rem;
-
+	display: grid;
+	grid-template-columns: min-content;
+	justify-self: center;
 	.img_container {
 		width: 20rem;
 		margin-inline: auto;
@@ -17,9 +17,16 @@
 		}
 
 		p {
+			display: inline-block;
 			margin: 0;
 			font-weight: bold;
 		}
+	}
+	h4 {
+		margin-block-end: 1rem;
+	}
+	button {
+		font-size: 0.6rem;
 	}
 	.hidden {
 		display: none;

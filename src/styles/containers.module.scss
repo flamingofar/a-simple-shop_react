@@ -13,9 +13,21 @@
 
 .produktListmain {
 	grid-column: 2;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-start;
 }
+
+.header {
+	display: flex;
+	gap: 1rem;
+}
+
 .productList {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(18.75rem, 1fr));
+	grid-template-columns: repeat(auto-fill, minmax(16.1rem, 1fr));
 	gap: 2rem;
+
+	margin-block-end: 1.6rem;
 }

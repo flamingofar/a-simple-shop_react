@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "../styles/Product.module.scss";
+import NumberFormat from "react-number-format";
 
 import Button from "@mui/material/Button";
 
@@ -28,16 +29,18 @@ function Product({ product, basket, setBasket }) {
 			console.log("Does not exist");
 		}
 	};
+	console.log(product.category);
 
 	return (
 		<li className={styles.li}>
 			<div className={styles.img_container}>
 				<img src={`https://kea-alt-del.dk/t7/images/webp/640/${product.id}.webp`} alt="" />
 			</div>
-			<p>{product.brand}</p>
+			<p>{product.brandname}</p>
 			<h4>{product.productdisplayname}</h4>
 			<div className={styles.info_basket}>
-				<p>kr. {product.price},-</p>
+				<NumberFormat thousandsGroupStyle="thousand" value={product.price} decimalSeparator="." thousandSeparator={true} displayType="text" suffix=".00 kr." />
+
 				<div>
 					<Button disableElevation variant="contained" onClick={addToBasket}>
 						Add to basket
