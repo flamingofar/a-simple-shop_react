@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-function Filter({ products, setProducts, setGender, gender }) {
+function Filter({ products, setProducts, setGender, gender, categories, setCategory }) {
 	useEffect(() => {
 		console.log(gender);
 	}, [gender]);
@@ -9,7 +9,7 @@ function Filter({ products, setProducts, setGender, gender }) {
 		setGender(e.target.value);
 	};
 	const handleCategory = (e) => {
-		// setGender(e.target.value);
+		setCategory(e.target.value);
 	};
 
 	return (
@@ -20,12 +20,19 @@ function Filter({ products, setProducts, setGender, gender }) {
 					<option value="">All</option>
 					<option value="men">Men</option>
 					<option value="women">Women</option>
+					<option value="unisex">Unisex</option>
 				</select>
 			</label>
 			<label>
 				Category
 				<select name="category" id="category" onChange={handleCategory}>
 					<option value="">All</option>
+					{categories.map((category, idx) => (
+						<option key={idx} value={category.category.toLowerCase()}>
+							{category.category}
+						</option>
+					))}
+
 					<option value="men">Men</option>
 					<option value="women">Women</option>
 				</select>

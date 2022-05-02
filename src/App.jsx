@@ -8,10 +8,21 @@ function App() {
 	const [products, setProducts] = useState([]);
 	const [basket, setBasket] = useState([]);
 	const [fetchAmount, setFetchAmount] = useState(0);
+	const [categories, setCategories] = useState([]);
 
 	const loadMore = () => {
 		setFetchAmount((prev) => prev + 10);
 	};
+
+	useEffect(() => {
+		const fetchData = async () => {
+			const json = await fetch("https://kea-alt-del.dk/t7/api/categories");
+			const data = await json.json();
+
+			setCategories(data);
+		};
+		fetchData();
+	}, []);
 
 	useEffect(() => {
 		const fetchData = async () => {
@@ -30,7 +41,7 @@ function App() {
 			</header>
 
 			<main>
-				<ProductList products={products} setProducts={setProducts} basket={basket} setBasket={setBasket} loadMore={loadMore} />
+				<ProductList products={products} setProducts={setProducts} basket={basket} setBasket={setBasket} loadMore={loadMore} categories={categories} />
 				<BasketContainer basket={basket} setBasket={setBasket} />
 			</main>
 		</>

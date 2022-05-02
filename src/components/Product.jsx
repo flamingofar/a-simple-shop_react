@@ -29,7 +29,6 @@ function Product({ product, basket, setBasket }) {
 			console.log("Does not exist");
 		}
 	};
-	console.log(product.category);
 
 	return (
 		<li className={styles.li}>
